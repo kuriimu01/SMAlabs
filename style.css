@@ -1,3 +1,22 @@
 body{
-    margin: 0px 0px 0px 0px;
+    height: 800px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(193, 11, 11);
+    color:rgb(247, 5, 41);
+    font-size: xx-large;
+}
+.timer-container{
+    display: flex;
+    width: 700px; 
+    height: 200px; 
+    background-color: rgb(34, 34, 34);
+    align-items: center;
+    justify-content: center;
+    
+}
+.timer-container > * {
+    padding: 5px;
 }
