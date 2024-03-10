@@ -3,17 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
     
-    <title>Timer</title>
+    <title>Tasks</title>
 </head>
 <body>
-    <div class="timer-container">
-        <span id="days">0</span>
-        <span id="hours">0</span>
-        <span id="minutes">0</span>
-        <span id="seconds">0</span>
+    <div class="container">
+        <div class="task1">
+            <p>Task 1</p>
+            <span id="date">0</span>
+        </div>
+        <div class="task2">
+            <p>Task 2</p>
+            <form id="form1">
+                <label for="Year">Рік:</label>
+                <input type="number" id="inputYear" name="Year" min="0">
+                <label for="Month">Місяць:</label>
+                <input type="number" id="inputMonth" name="Month" min="1" max="12">
+                <button type="submit">></button>
+            </form>
+            <span id="lastDay"><br>0</span>
+        </div>
+        <div class="task3">
+            <p>Task 3</p>
+            <span id="secondsPassed">0</span>
+        </div>
+        <div class="task4">
+            <p>Task 4</p>
+            <form id="form2">
+                <label for="Year">Рік:</label>
+                <input type="number" id="inputYear2" name="Year" min="0">
+                <button type="submit">></button>
+            </form>
+            <span id="getCentury"><br>0</span>
+        </div>
+        <div class="task5">
+            <p>Task 5</p>
+            <form id="form3">
+                <input type="date" id="inputDate1" name="date1">
+                <input type="date" id="inputDate2" name="date2">
+                <button type="submit">></button>
+            </form>
+            <span id="fullYears"><br>0</span>
+        </div>
+        <div class="task6">
+            <p>Task 6</p>
+            <form id="form4">
+                <input type="time" id="sunrise" name="rise">
+                <input type="time" id="sunset" name="set">
+                <button type="submit">></button>
+            </form>
+            <span id="getDeviation"><br>0</span>
+        </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>

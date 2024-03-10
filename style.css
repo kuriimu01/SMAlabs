@@ -1,22 +1,51 @@
 body{
-    height: 800px;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(193, 11, 11);
-    color:rgb(247, 5, 41);
+    background-color: rgb(211, 147, 147);
+    color:white;
+    font-size: x-large;
+}
+.container > * > p{
     font-size: xx-large;
+    color:rgb(156, 112, 23);
+    text-align: left;
+    margin-top: 0px;
 }
-.timer-container{
-    display: flex;
-    width: 700px; 
-    height: 200px; 
-    background-color: rgb(34, 34, 34);
-    align-items: center;
-    justify-content: center;
-    
+.container > *{
+    background-color: rgb(224, 168, 122);
+    opacity: 70%;
+    width: 1000px;
+    height: 200px;
+    margin: 30px;
+    padding: 20px;
+    text-align: center;
 }
-.timer-container > * {
+input[type=number] {
+    height: 17px;
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: 2px solid rgb(225, 117, 117);
+	border-radius: 2px 2px 0 0;
+    padding: 3px;
+	color: rgb(211, 147, 147);
+}
+input[type=date], input[type=time] {
+    height: 17px;
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: 2px solid rgb(225, 117, 117);
+	border-radius: 2px 2px 0 0;
+    padding: 3px;
+	color: rgb(156, 112, 23);
+}
+label{
     padding: 5px;
+}
+#fullYears, #getCentury, #lastDay{
+    text-decoration: underline;
+    text-decoration-color: rgb(156, 112, 23);
 }
