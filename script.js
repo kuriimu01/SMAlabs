@@ -104,3 +104,23 @@ function calculateTimeDeviation(sunrise, sunset) {
   return [deviationHours, -deviationRemainingMinutes];
 }
 
+// Task 7
+
+let setTimezone = document.getElementById("timezone");
+
+document.getElementById("form5").addEventListener("submit", function(event) {
+  event.preventDefault();
+  let country = document.getElementById("country").value;
+  setTimezone.innerHTML = `<br> ${getTimezone(country)}`;
+});
+
+function getTimezone(country) {
+  // Створюємо об'єкт Date
+  const now = new Date();
+
+  // Отримуємо строку з часом для країни
+  const countryTimeString = now.toLocaleString('en-US', { timeZone: country });
+  return countryTimeString;
+}
+
+

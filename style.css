@@ -22,12 +22,12 @@ body{
     padding: 20px;
     text-align: center;
 }
-input[type=number] {
+input[type=number], input[type=text] {
     height: 17px;
 	appearance: none;
 	border: none;
 	outline: none;
-	border-bottom: 2px solid rgb(225, 117, 117);
+	border-bottom: 3px solid rgb(225, 117, 117);
 	border-radius: 2px 2px 0 0;
     padding: 3px;
 	color: rgb(211, 147, 147);
@@ -37,7 +37,7 @@ input[type=date], input[type=time] {
 	appearance: none;
 	border: none;
 	outline: none;
-	border-bottom: 2px solid rgb(225, 117, 117);
+	border-bottom: 3px solid rgb(225, 117, 117);
 	border-radius: 2px 2px 0 0;
     padding: 3px;
 	color: rgb(156, 112, 23);
@@ -45,7 +45,7 @@ input[type=date], input[type=time] {
 label{
     padding: 5px;
 }
-#fullYears, #getCentury, #lastDay{
+#fullYears, #getCentury, #lastDay, #getDeviation{
     text-decoration: underline;
     text-decoration-color: rgb(156, 112, 23);
 }
