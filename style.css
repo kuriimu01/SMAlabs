@@ -17,10 +17,16 @@ body{
     background-color: rgb(224, 168, 122);
     opacity: 70%;
     width: 1000px;
-    height: 200px;
+    height: 300px;
     margin: 30px;
     padding: 20px;
     text-align: center;
+}
+.task2, .task3{
+    height:900px;
+}
+.task4{
+    height: 500px;
 }
 input[type=number], input[type=text] {
     height: 17px;
@@ -44,8 +50,4 @@ input[type=date], input[type=time] {
 }
 label{
     padding: 5px;
-}
-#fullYears, #getCentury, #lastDay, #getDeviation{
-    text-decoration: underline;
-    text-decoration-color: rgb(233, 177, 65);
 }

@@ -1,280 +1,350 @@
-//1. Створення об'єкту з іменами днів тижня:
-let weekDays = {
-    1: 'Понеділок',
-    2: 'Вівторок',
-    3: 'Середа',
-    4: 'Четвер',
-    5: 'П\'ятниця',
-    6: 'Субота',
-    7: 'Неділя'
-};
+/*Task 1 */
 
-for (let key in weekDays) {
-    console.log(weekDays[key]);
+// Створення масиву трикутних чисел
+let treag = [];
+for (let n = 1; n <= 10; n++) {
+    treag.push(n * (n + 1) / 2);
 }
-//2. Створення об'єкту з назвами місяців:
-let months = {
-  1: 'Січень',
-  2: 'Лютий',
-  3: 'Березень',
-  4: 'Квітень',
-  5: 'Травень',
-  6: 'Червень',
-  7: 'Липень',
-  8: 'Серпень',
-  9: 'Вересень',
-  10: 'Жовтень',
-  11: 'Листопад',
-  12: 'Грудень'
-};
-for (let key in months) {
-  console.log(months[key]);
+// Створення масиву квадратів натуральних чисел від 1 до 10
+let kvd = [];
+for (let i = 1; i <= 10; i++) {
+    kvd.push(i * i);
 }
-//3. Об'єкт користувача та виведення прізвища, ім'я та по батькові:
-let user = {
-  name: 'Даниїл',
-  patronymic: 'Романович',
-  surname: 'Бут',
-};
+// Об'єднання двох масивів у масив rez
+let rez = treag.concat(kvd);
 
-console.log(user.surname + ' ' + user.name + ' ' + user.patronymic);
-//4. Створення об'єкту з поточною датою:
-let currentDate = new Date();
-let date = {
-    year: currentDate.getFullYear(),
-    month: currentDate.getMonth() + 1,
-    day: currentDate.getDate()
-};
+//Вивід
+let outputDiv1 = document.getElementById('output1');
+outputDiv1.innerHTML += `
+  <p>Трикутні числа: ${treag.join(" ")}</p>
+  <p>Квадрати натуральних чисел: ${kvd.join(" ")}</p>
+  <p>Об'єднані масиви: ${rez.join(" ")}</p>
+  <p>У зворотньому порядку: ${rez.sort((a, b) => b - a).join(" ")}</p>`;
 
-console.log(`${date.year}-${date.month}-${date.day}`);
-//5-6. Лапки обов'язкові для ключів, які містять спеціальні символи, пробіли або починаються з цифри. 
-//У даному випадку, ключі 1a, с-с, d 4 вимагають лапок.
-let obj = {
-  '1a': 1,
-  'b2': 2,
-  'с-с': 3,
-  'd 4': 4,
-  'e5': 5
-};
+/*Task 2 */
 
-console.log(obj['1a']);
-console.log(obj.b2);
-console.log(obj['с-с']);
-console.log(obj['d 4']);
-console.log(obj.e5);
-//7. Піднесення до квадрату кожного елемента об'єкта:
-let obj = {x: 1, y: 2, z: 3};
-
-for (let key in obj) {
-    obj[key] = obj[key] * obj[key];
-}
-
-console.log(obj);
-//8-9. Створіть об'єкт і переконайтеся, що порядок ключів у ньому не має значення.
-// Порядок ключів у JavaScript об'єкті не гарантується.
-// Отримайте масив ключів наступного об'єкта: 
-let obj = {x: 1, y: 2, z: 3};
-let keys = Object.keys(obj);
-console.log(keys);
-//10. Знаходження кількості елементів у об'єкті:
-let obj = {x: 1, y: 2, z: 3};
-let count = Object.keys(obj).length;
-console.log(count);
-//11. Виведення елемента об'єкта за допомогою ключа, який зберігається у змінній:
-let obj = {x: 1, y: 2, z: 3};
-let key = 'x';
-console.log(obj[key]);
-//12. Виправлення помилки:
-let obj = {x: 1, y: 2, z: 3};
-console.log(obj['x']);
-//13. Виправлення помилки:
-let obj = {x: 1, y: 2, z: 3};
-let key = 'x';
-console.log(obj[key]);
-//14. Виправлення помилки:
-let obj = {x: 1, y: 2, z: 3};
-let prop = 'x';
-console.log(obj[prop]);
-//15. Виправлення помилки:
-let obj = {x: 1, y: 2, z: 3};
-let prop = 'x';
-console.log(obj[prop]);
-//16. У наступному коді ключ повинен був взятися зі змінної. Виправте помилку:
-let key = 'x';
-let obj = {
-    [key]: 1,
-    y: 2,
-    z: 3
-};
-//17. Звернення до ключів об'єкта через змінні:
-let obj = {
-  x: 1,
-  y: 2,
-  z: 3
-};
-let key1 = 'x';
-let key2 = 'y';
-let key3 = 'z';
-
-console.log(obj[key1]);
-console.log(obj[key2]);
-console.log(obj[key3]);
-//18. Що виведеться в консоль у результаті виконання наступного коду:
-let obj = {x: 1, y: 2, z: 3};
-console.log('x' in obj); //true
-console.log('w' in obj); //false
-//19. Що виведеться в консоль у результаті виконання наступного коду: 
-let obj = {x: 1, y: 2, z: 3};
-delete obj.x;
-console.log('x' in obj); // false
-//20. Не запускаючи код, визначте, що виведеться в консоль: 
-console.log( typeof {x: 1, y: 2, z: 3} ); //object
-//21. Не запускаючи код, визначте, що виведеться в консоль: 
-console.log( typeof {} ); // object
-//22. Не запускаючи код, визначте, що виведеться в консоль: 
-let obj = {x: 1, y: 2, z: 3};
-console.log( typeof obj ); // object
-//23. Не запускаючи код, визначте, що виведеться в консоль: 
-let obj = {x: 1, y: 2, z: 3};
-console.log( typeof obj['x'] ); // number
-//24. Не запускаючи код, визначте, що виведеться в консоль: 
-console.log( typeof {x: 1, y: 2, z: 3} ); // object
-//25. Не запускаючи код, визначте, що виведеться в консоль: 
-console.log( typeof [1, 2, 3] ); // object
-//26. Не запускаючи код, визначте, що виведеться в консоль: 
-let arr = [1, 2, 3];
-console.log( typeof arr ); // object
-//27. Не запускаючи код, визначте, що виведеться в консоль: 
-let arr = [1, 2, 3];
-console.log( typeof arr[0] ); // number
-//28. Не запускаючи код, визначте, що виведеться в консоль: 
-let arr = ['1', '2', '3']; 
-console.log( typeof arr[0] ); // string
-//29. Не запускаючи код, визначте, що виведеться в консоль: 
-console.log( Array.isArray([1, 2, 3]) ); // true
-//30. Не запускаючи код, визначте, що виведеться в консоль: 
-console.log( Array.isArray({x: 1, y: 2, z: 3}) ); // false
-//31. Даний наступний код:
-let test = {x: 1, y: 2, z: 3};
-console.log(test);
-//Який тип даних виведеться в консоль? Це примітив чи об'єкт?  - object
-//32. Даний наступний код:
-let test = {x: 1, y: 2, z: 3};
-console.log(test.x);
-//Який тип даних виведеться в консоль? Це примітив чи об'єкт? - примітив
-//33. Даний наступний код:
-let test = [1, 2, 3];
-console.log(test);
-//Який тип даних виведеться в консоль? Це примітив чи об'єкт? - object
-//34. Даний наступний код:
-let test = [1, 2, 3];
-console.log(test[1]);
-//Який тип даних виведеться в консоль? Це примітив чи об'єкт? - примітив
-//35. Даний наступний код:
-let test1 = [1, 2, 3];
-let test2 = 1;
-console.log(test1);
-//Який тип даних виведеться в консоль? Це примітив чи об'єкт? - object
-//36. Даний наступний код:
-let test1 = [1, 2, 3];
-let test2 = 1;
-console.log(test1[test2]);
-//Який тип даних виведеться в консоль? Це примітив чи об'єкт? - примітив
-//37. Перерахуйте всі примітивні типи даних JavaScript.
-/*String
-Number
-Boolean
-Undefined
-Null */
-//38. Не запускаючи код, визначте, що виведеться в консоль:
-let arr1 = [1, 2, 3];
-let arr2 = arr1;
-arr1[0] = 'a';
-console.log(arr2); // ['a', 2, 3]
-
-//39. Не запускаючи код, визначте, що виведеться в консоль:
-let arr1 = [1, 2, 3];
-let arr2 = arr1;
-arr1[0] = 'a';
-arr2[1] = 'b';
-console.log(arr1); // ['a', 'b', 3]
-//40. Не запускаючи код, визначте, що виведеться в консоль:
-let arr1 = [1, 2, 3];
-let arr2 = arr1;
-arr1[0] = 'a';
-arr2[0] = 'b';
-console.log(arr2); // ['b', 2, 3]
-//41. Що виведеться в результаті виконання наступного коду:
-const arr = ['a', 'b', 'c'];
-arr[1] = '!';
-console.log(arr); // ['a', '!', 'c']
-//42. Що виведеться в результаті виконання наступного коду:
-const arr = ['a', 'b', 'c'];
-arr = [1, 2, 3];
-console.log(arr); // Помилка. Константу arr не можна перезначати
-//43. Що виведеться в результаті виконання наступного коду:
-const arr = ['a', 'b', 'c'];
-arr = ['a', 'b', 'c'];
-console.log(arr); // Помилка. Константу arr не можна перезначати
-//44. Пошук помилок у коді з об'єктами JavaScript
-let obj = {x: 1, y: 2, z: 3};
-console.log(obj[x]); // Правильно: Виведення елемента об'єкта
-
-let obj = {x: 1, y: 2, z: 3};
-let key = 'x';
-console.log(obj[key]); // Помилка: виправлено виведення елемента по ключу
-
-let obj = {x: 1, y: 2, z: 3};
-let sum = obj.x + obj.y + obj.z;
-console.log(sum); // Помилка: виправлено виведення суми елементів
-
-let obj = {x: 1, y: 2, z: 3};
-console.log(Object.keys(obj).length); // Помилка: виправлено виведення довжини
-//45. Перевірка наявності ключа age у об'єкті:
-let user = {
-  name: "John",
-  age: 30
-};
-
-if (Object.keys(user).length !== 0 && user.hasOwnProperty('age')) {
-  console.log('Об\'єкт не є порожнім і містить ключ age.');
-} else {
-  console.log('Об\'єкт порожній або не містить ключ age.');
-}
-//46. Отримання об'єкта з ім'ям "Bob":
-let user = [
-  {
-      name: "John",
-      age: 30
-  },
-  {
-      name: "Bob",
-      age: 21
-  },
-  {
-      name: "Anna",
-      age: 19
+// Функція для генерації масиву із випадковими числами
+function generateRandomArray(length) {
+  let array = [];
+  for (let i = 0; i < length; i++) {
+      array.push(Math.floor(Math.random() * 50)+1);
   }
-];
+  return array;
+}
 
-let bobObject = user.find(item => item.name === "Bob");
-//47. Видалення об'єкта з ім'ям "Anna":
-user = user.filter(item => item.name !== "Anna");
-//48. Сортування масиву об'єктів за зростанням віку:
-user.sort((a, b) => a.age - b.age);
-//49. Отримайте з об'єкта obj значення id у констанду id, не використовуючи вираз obj.id
-const obj = {
-  id: 5,
-  token: 12343423
-};
+// Функція для знаходження максимального елемента у масиві та його індексу
+function findMaxElement(array) {
+  let maxElementIndex = 0;
+  let maxElement = array[0];
+  for (let i = 1; i < array.length; i++) {
+      if (array[i] > maxElement) {
+          maxElement = array[i];
+          maxElementIndex = i;
+      }
+  }
+  return { maxElementIndex, maxElement };
+}
 
-const { id } = obj;
-console.log(id);
-//50. Отримайте з об'єкта obj значення id та розмістіть його у константі user Id.
-const obj = {
-  id: 5,
-  token: 12343423
-};
+// Функція для знаходження мінімального елемента у масиві та його індексу
+function findMinElement(array) {
+  let minElementIndex = 0;
+  let minElement = array[0];
+  for (let i = 1; i < array.length; i++) {
+      if (array[i] < minElement) {
+          minElement = array[i];
+          minElementIndex = i;
+      }
+  }
+  return { minElementIndex, minElement };
+}
 
-const userId = obj.id;
-console.log(userId);
+function task1(array) {
+  let { maxElementIndex, maxElement } = findMaxElement(array);
+  let temp = array[array.length - 1];
+  array[array.length - 1] = maxElement;
+  array[maxElementIndex] = temp;
+  return array
+}
+function task2(array) {
+  let { minElementIndex, minElement } = findMinElement(array);
+  let temp = array[minElementIndex - 1];
+  array[minElementIndex - 1] = minElement;
+  array[minElementIndex] = temp;
+  return array
+}
+function task3(array) {
+  let { minElementIndex, minElement } = findMinElement(array);
+  let temp = array[minElementIndex + 1];
+  array[minElementIndex + 1] = minElement;
+  array[minElementIndex] = temp;
+  return array
+}
+function task4(array) {
+  let { maxElementIndex, maxElement } = findMaxElement(array);
+  let temp = array[5];
+  array[5] = maxElement;
+  array[maxElementIndex] = temp;
+  return array
+}
+function task5(array) {
+  let { maxElementIndex, maxElement } = findMaxElement(array);
+  array[array.length - 1] = maxElement;
+  array[maxElementIndex] = -1;
+  return array
+}
+function task6(array) {
+  let { minElementIndex, minElement } = findMinElement(array);
+  array[0] = minElement;
+  array[minElementIndex] = 9999;
+  return array
+}
+function task7(array) {
+  let { minElementIndex, minElement } = findMinElement(array);
+  let temp = array[2];
+  array[2] = minElement;
+  array[minElementIndex] = temp;
+  return array
+}
+function task8(array) {
+  let { minElementIndex, minElement } = findMinElement(array);
+  array[minElementIndex] = array[0] + array[array.length - 1];
+  return array
+}
+function task9(array) {
+  let { maxElementIndex, maxElement } = findMaxElement(array);
+  let temp = array[array.length - 2];
+  array[array.length - 2] = maxElement;
+  array[maxElementIndex] = temp;
+  return array
+}
+function task10(array) {
+  let { minElementIndex, minElement } = findMinElement(array);
+  array[array.length - 1] = minElement;
+  array[minElementIndex] = "3N";
+  return array
+}
+function task11(array, elementIndex) {
+  let { minElementIndex, minElement } = findMinElement(array);
+  let temp = array[elementIndex];
+  array[elementIndex] = minElement;
+  array[minElementIndex] = temp;
+  return array
+}
+function task12(array) {
+  let { maxElementIndex, maxElement } = findMaxElement(array);
+  let temp = array[1];
+  array[1] = maxElement;
+  array[maxElementIndex] = temp;
+  return array
+}
+function task13(array) {
+  let { minElementIndex, minElement } = findMinElement(array);
+  let temp = array[array.length - 1];
+  array[array.length - 1] = minElement;
+  array[minElementIndex] = temp;
+  return array
+}
+function task14(array) {
+  let { minElementIndex, minElement } = findMinElement(array);
+  let temp = array[array.length - 2];
+  array[array.length - 2] = minElement;
+  array[minElementIndex] = temp;
+  return array
+}
+function task15(array) {
+  let { minElementIndex, minElement } = findMinElement(array);
+  let temp = array[2];
+  array[2] = minElement;
+  array[minElementIndex] = temp;
+  return array
+}
+
+let array = generateRandomArray(15);
+document.getElementById('output2').innerHTML = `
+  <p>Початковий: ${array.join(" ")}</p>
+  <p>Завдання 1: ${task1(array).join(" ")}</p>
+  <p>Завдання 2: ${task2(array).join(" ")}</p>
+  <p>Завдання 3: ${task3(array).join(" ")}</p>
+  <p>Завдання 4: ${task4(array).join(" ")}</p>
+  <p>Завдання 5: ${task5(array).join(" ")}</p>
+  <p>Завдання 6: ${task6(array).join(" ")}</p>
+  <p>Завдання 7: ${task7(array).join(" ")}</p>
+  <p>Завдання 8: ${task8(array).join(" ")}</p>
+  <p>Завдання 9: ${task9(array).join(" ")}</p>
+  <p>Завдання 10: ${task10(array).join(" ")}</p>
+  <p>Завдання 11: ${task11(array, 5).join(" ")}</p>
+  <p>Завдання 12: ${task12(array).join(" ")}</p>
+  <p>Завдання 13: ${task13(array).join(" ")}</p>
+  <p>Завдання 14: ${task14(array).join(" ")}</p>
+  <p>Завдання 15: ${task15(array).join(" ")}</p>
+`;
+
+
+/*Task 3 */
+
+let array2 = generateRandomArray(15);
+// Завдання 1: Знайти кількість чисел, що належать проміжку [a,b], 
+// та суму чисел, що стоять на місцях, кратних 3.
+function task2_1(array, a, b) {
+  let countInRange = array.filter(num => num >= a && num <= b).length;
+  let sumOfMultiplesOf3 = array.filter((num, index) => index % 3 === 0).reduce((acc, num) => acc + num, 0);
+  return [countInRange.toFixed(1), sumOfMultiplesOf3.toFixed(1)];
+}
+
+// Завдання 2: Знайти суму чисел, менших за задане D, і кількість чисел, що стоять на парних місцях
+// і більших за задане C.
+function task2_2(array, c, d) {
+  let sumLessThanD = array.filter(num => num < d).reduce((acc, num) => acc + num, 0);
+  let countEvenGreaterThanC = array.filter((num, index) => index % 2 === 0 && num > c).length;
+  return [sumLessThanD.toFixed(1), countEvenGreaterThanC.toFixed(1)];
+}
+
+// Завдання 3: Знайти добуток усіх чисел, що стоять на місцях, кратних 4, та кількість чисел, не
+// більше за задане A.
+function task2_3(array, a) {
+  let productOfMultiplesOf4 = array.filter((num, index) => index % 4 === 0).reduce((acc, num) => acc * num, 1);
+  let countNotGreaterThanA = array.filter(num => num <= a).length;
+  return [productOfMultiplesOf4.toFixed(1), countNotGreaterThanA.toFixed(1)];
+}
+
+// Завдання 4: Знайти кількість чисел, менших за задане X, і добуток усіх від’ємних чисел, що
+// знаходяться на непарних місцях.
+function task2_4(array, x) {
+  let countLessThanX = array.filter(num => num < x).length;
+  let productOfNegativeOdd = array.filter((num, index) => index % 2 === 1 && num < 0).reduce((acc, num) => acc * num, 1);
+  return [countLessThanX.toFixed(1), productOfNegativeOdd.toFixed(1)];
+}
+
+// Завдання 5: Знайти кількість чисел, що не належать до проміжку (X,Y], та суму від’ємних чисел,
+// що знаходяться на парних місцях.
+function task2_5(array, x, y) {
+  let countNotInRange = array.filter(num => !(num > x && num <= y)).length;
+  let sumOfNegativeEven = array.filter((num, index) => index % 2 === 0 && num < 0).reduce((acc, num) => acc + num, 0);
+  return [countNotInRange.toFixed(1), sumOfNegativeEven.toFixed(1)];
+}
+
+// Завдання 6: Знайти кількість невід'ємних чисел і визначити суму чисел, що знаходяться на місцях,
+// кратних 3 і нерівних заданому F.
+function task2_6(array, f) {
+  let countNonNegative = array.filter(num => num >= 0).length;
+  let sumOfMultiplesOf3NotEqualToF = array.filter((num, index) => index % 3 === 0 && num !== f).reduce((acc, num) => acc + num, 0);
+  return [countNonNegative.toFixed(1), sumOfMultiplesOf3NotEqualToF.toFixed(1)];
+}
+
+// Завдання 7: Знайти середнє арифметичне від'ємних чисел і визначити кількість чисел, що за
+// величиною великих А і стоять на парних місцях.
+function task2_7(array, a) {
+  let negativeNumbers = array.filter(num => num < 0);
+  let averageNegativeNumbers = negativeNumbers.length > 0 ? negativeNumbers.reduce((acc, num) => acc + num, 0) / negativeNumbers.length : 0;
+  let countGreaterThanAAndEven = array.filter((num, index) => num > a && index % 2 === 0).length;
+  return [averageNegativeNumbers.toFixed(1), countGreaterThanAAndEven.toFixed(1)];
+}
+
+// Завдання 8: Знайти середнє арифметичне додатних чисел, що стоять на непарних місцях, та
+// кількість чисел, менших за задане B.
+function task2_8(array, b) {
+  let positiveNumbersOnOddPlaces = array.filter((num, index) => num > 0 && index % 2 === 1);
+  let averagePositiveNumbers = positiveNumbersOnOddPlaces.length > 0 ? positiveNumbersOnOddPlaces.reduce((acc, num) => acc + num, 0) / positiveNumbersOnOddPlaces.length : 0;
+  let countLessThanB = array.filter(num => num < b).length;
+  return [averagePositiveNumbers.toFixed(1), countLessThanB.toFixed(1)];
+}
+
+// Завдання 9: Знайти середнє арифметичне чисел, що належать проміжку [A,B), та кількість
+// додатних чисел, що стоять на місцях, кратних 4.
+function task2_9(array, a, b) {
+  let numbersInRange = array.filter(num => num >= a && num < b);
+  let averageNumbersInRange = numbersInRange.length > 0 ? numbersInRange.reduce((acc, num) => acc + num, 0) / numbersInRange.length : 0;
+  let countPositiveMultiplesOf4 = array.filter((num, index) => num > 0 && index % 4 === 0).length;
+  return [averageNumbersInRange.toFixed(1), countPositiveMultiplesOf4.toFixed(1)];
+}
+
+// Завдання 10: Знайти середнє арифметичні чисел, нерівних заданому С, і добуток недодатних чисел,
+// що стоять на парних місцях.
+function task2_10(array, c) {
+  let numbersNotEqualToC = array.filter(num => num !== c);
+  let averageNumbersNotEqualToC = numbersNotEqualToC.length > 0 ? numbersNotEqualToC.reduce((acc, num) => acc + num, 0) / numbersNotEqualToC.length : 0;
+  let productOfNonPositiveNumbersOnEvenPlaces = array.filter((num, index) => num <= 0 && index % 2 === 0).reduce((acc, num) => acc * num, 1);
+  return [averageNumbersNotEqualToC.toFixed(1), productOfNonPositiveNumbersOnEvenPlaces.toFixed(1)];
+}
+
+// Завдання 11: Знайти середнє арифметичне чисел, більших за задане D і які стоять на непарних
+// місцях, і визначити кількість чисел, не більших за задане F.
+function task2_11(array, d, f) {
+  let numbersGreaterThanDOnOddPlaces = array.filter((num, index) => num > d && index % 2 === 1);
+  let averageNumbersGreaterThanDOnOddPlaces = numbersGreaterThanDOnOddPlaces.length > 0 ? numbersGreaterThanDOnOddPlaces.reduce((acc, num) => acc + num, 0) / numbersGreaterThanDOnOddPlaces.length : 0;
+  let countNotGreaterThanF = array.filter(num => num <= f).length;
+  return [averageNumbersGreaterThanDOnOddPlaces.toFixed(1), countNotGreaterThanF.toFixed(1)];
+}
+
+// Завдання 12: Знайти середнє арифметичне чисел, що не потрапляють у проміжок [A,B], та кількість
+// додатних чисел, що стоять на місцях, кратних 3.
+function task2_12(array, a, b) {
+  let numbersNotInRange = array.filter(num => num < a || num >= b);
+  let averageNumbersNotInRange = numbersNotInRange.length > 0 ? numbersNotInRange.reduce((acc, num) => acc + num, 0) / numbersNotInRange.length : 0;
+  let countPositiveMultiplesOf3 = array.filter((num, index) => num > 0 && index % 3 === 0).length;
+  return [averageNumbersNotInRange.toFixed(1), countPositiveMultiplesOf3.toFixed(1)];
+}
+
+// Завдання 13: Знайти середнє арифметичне ненульових чисел і кількість чисел, що за величиною не
+// більше A і що стоять на парних місцях.
+function task2_13(array, a) {
+  let nonZeroNumbers = array.filter(num => num !== 0);
+  let averageNonZeroNumbers = nonZeroNumbers.length > 0 ? nonZeroNumbers.reduce((acc, num) => acc + num, 0) / nonZeroNumbers.length : 0;
+  let countNotGreaterThanAAndEven = array.filter((num, index) => num <= a && index % 2 === 0).length;
+  return [averageNonZeroNumbers.toFixed(1), countNotGreaterThanAAndEven.toFixed(1)];
+}
+
+// Завдання 14: Обчислити добуток чисел, що належать проміжку (A,B], та кількість від’ємних чисел,
+// що стоять на місцях, кратних 3.
+function task2_14(array, a, b) {
+  let numbersInRange = array.filter(num => num > a && num <= b);
+  let productOfNumbersInRange = numbersInRange.reduce((acc, num) => acc * num, 1);
+  let countOfNegativeMultiplesOf3 = array.filter((num, index) => num < 0 && index % 3 === 0).length;
+  return [productOfNumbersInRange.toFixed(1), countOfNegativeMultiplesOf3.toFixed(1)];
+}
+
+// Завдання 15: Знайти середнє арифметичне додатних чисел, що стоять на непарних місцях, і
+// добуток чисел, менших за задане С.
+function task2_15(array, c) {
+  let positiveNumbersOnOddPlaces = array.filter((num, index) => num > 0 && index % 2 === 1);
+  let averagePositiveNumbersOnOddPlaces = positiveNumbersOnOddPlaces.length > 0 ? positiveNumbersOnOddPlaces.reduce((acc, num) => acc + num, 0) / positiveNumbersOnOddPlaces.length : 0;
+  let productOfNumbersLessThanC = array.filter(num => num < c).reduce((acc, num) => acc * num, 1);
+  return [averagePositiveNumbersOnOddPlaces.toFixed(1), productOfNumbersLessThanC.toFixed(1)];
+}
+
+document.getElementById('output3').innerHTML = `
+  <p>Початковий: ${array2.join(" ")}</p>
+  <p>Завдання 1: ${task2_1(array2, 3, 8).join(" ")}</p>
+  <p>Завдання 2: ${task2_2(array2, 5, 7).join(" ")}</p>
+  <p>Завдання 3: ${task2_3(array2, 3).join(" ")}</p>
+  <p>Завдання 4: ${task2_4(array2, 4).join(" ")}</p>
+  <p>Завдання 5: ${task2_5(array2, 4, 9).join(" ")}</p>
+  <p>Завдання 6: ${task2_6(array2, 2).join(" ")}</p>
+  <p>Завдання 7: ${task2_7(array2, 3).join(" ")}</p>
+  <p>Завдання 8: ${task2_8(array2, 8).join(" ")}</p>
+  <p>Завдання 9: ${task2_9(array2, 3, 8).join(" ")}</p>
+  <p>Завдання 10: ${task2_10(array2, 5).join(" ")}</p>
+  <p>Завдання 11: ${task2_11(array2, 7, 2).join(" ")}</p>
+  <p>Завдання 12: ${task2_12(array2, 3, 8).join(" ")}</p>
+  <p>Завдання 13: ${task2_13(array2, 3).join(" ")}</p>
+  <p>Завдання 14: ${task2_14(array2, 3, 8).join(" ")}</p>
+  <p>Завдання 15: ${task2_15(array2, 5).join(" ")}</p>
+`;
+
+// Task 4
+
+// Масиви
+let fruits = ['apple', 'pineapple', 'mango', 'melon', 'grape'];
+let citrus = ['orange', 'lemon', 'lime'];
+
+// Виведення масивів
+document.getElementById('output4').innerHTML = `
+  <p>Масив fruits: ${fruits.join(", ")}</p>
+  <p>Масив citrus: ${citrus.join(", ")}</p>
+  <p>Об'єднаний масив: ${fruits.concat(citrus).join(", ")}</p>
+  <p>Після вставки: ${fruits.slice(0, 3).concat(['pear', 'cherry', 'plum', 'raspberry', 'strawberry']).concat(fruits.slice(3)).join(", ")}</p>
+  <p>Видалення останніх 3 елементів: ${fruits.slice(0, -3).join(", ")}</p>
+  <p>В алфавітному порядку: ${fruits.slice().sort().join(", ")}</p>
+  <p>В зворотному алфавітному порядку: ${fruits.slice().sort().reverse().join(", ")}</p>
+  <p>Відсортований за довжиною слів: ${fruits.slice().sort(function(a, b){ return a.length - b.length; }).join(", ")}</p>
+`;
